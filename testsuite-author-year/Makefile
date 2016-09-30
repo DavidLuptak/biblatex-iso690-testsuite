@@ -2,7 +2,7 @@ PATTERN=pattern
 OUTPUT=output
 TEX=pdflatex
 
-.PHONY: all remove_old_pdf pdf clean makediff
+.PHONY: all remove_old_pdfs clean makediff
 
 all: remove_old_pdfs pattern output clean makediff
 
