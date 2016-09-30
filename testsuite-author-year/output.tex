@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english,czech]{babel}
+\usepackage{csquotes}
+\usepackage[style=iso-authoryear]{biblatex}
+
+\addbibresource{mybib.bib}
+
+\defbibenvironment{bibliography}
+  {\list
+     {}
+     {\setlength{\labelwidth}{0pt}%
+      \setlength{\leftmargin}{20pt}%
+      \setlength{\itemindent}{-10pt}%
+      %\setlength{\itemsep}{\bibitemsep}%
+      %\setlength{\parsep}{\bibparsep}}%
+      }%
+      \renewcommand*{\makelabel}[1]{\hss##1}}
+  {\endlist}
+  {\item}
+
+%% Since the `thebibliography` environment does not support
+%% citing by the method author-year, only references are tested
+%% for correctness
+\begin{document}
+
+\nocite{*}
+\printbibliography
+
+\end{document}
