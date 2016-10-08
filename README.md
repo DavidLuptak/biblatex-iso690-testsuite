@@ -18,4 +18,8 @@ To run the tests, execute the `make` command within the appropriate directory ([
 
 The main idea of the testsuite is to visually compare a generated pdf output compiled against the `biblatex-iso690` package with the designed list of references conforming to the ISO 690 international standard created by the `thebibliography` environment.
 
-Such method has been chosen based on the need of verifying the correct order of elements in a reference.
+Such method has been chosen based on the need of verifying the correct order of elements in a reference, neither the style nor punctuation (the ISO 690 standard itself does not prescribe any particular style of reference or citation to be strictly used) [1].
+
+***
+
+[1] ISO 690: Information and documentation -- Guidelines for bibliographic references and citations to information resources. Third edition. Geneva: The International Organization for Standardization, 2010.
