@@ -16,7 +16,7 @@ To run the testsuite, execute the `make` command within the appropriate director
 
 Or execute the `make` command from the root directory to visually compare the outputs of all styles (alternatively can be specified the directory as an argument to run the testsuite only for a desired style).
 ```
-$ make					
+$ make
 $ make 01-author-year
 $ make 02-numeric
 ```
