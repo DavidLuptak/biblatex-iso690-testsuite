@@ -12,7 +12,14 @@ Running the tests requires a `pdflatex` engine for generating pdf outputs and a 
 
 ## Usage
 
-To run the tests, execute the `make` command within the appropriate directory ([01-author-year](./01-author-year) or [02-numeric](./02-numeric) one) and then visually compare the outputs.
+To run the testsuite, execute the `make` command within the appropriate directory ([01-author-year](./01-author-year) or [02-numeric](./02-numeric) one) and then visually compare the outputs.
+
+Or execute the `make` command from the root directory to visually compare the outputs of all styles (alternatively can be specified the directory as an argument to run the testsuite only for a desired style).
+```
+$ make					
+$ make 01-author-year
+$ make 02-numeric
+```
 
 ## Testing method
 
