@@ -2,15 +2,17 @@ PATTERN=pattern
 OUTPUT=output
 TEX=pdflatex
 
-.PHONY: all remove_old_pdfs clean makediff
+.PHONY: all output pattern makediff clean implode
 
-all: remove_old_pdfs pattern output clean makediff
+all:
+	$(MAKE) implode
+	$(MAKE) pattern
+	$(MAKE) output
+	$(MAKE) clean
+	$(MAKE) makediff
 
 output: ${OUTPUT}.pdf
 pattern: $(PATTERN).pdf
-
-remove_old_pdfs:
-	-rm ${OUTPUT}.pdf $(PATTERN).pdf
 
 $(PATTERN).pdf:
 	$(TEX) $(PATTERN).tex
@@ -21,9 +23,11 @@ ${OUTPUT}.pdf:
 	biber ${OUTPUT}.bcf
 	$(TEX) ${OUTPUT}.tex
 
-clean:
-	-rm *.aux *.bbl *.blg *.bcf *.run.xml *.out *.log
-
 makediff:
 	diffpdf $(PATTERN).pdf $(OUTPUT).pdf &
 
+clean:
+	-rm *.aux *.bbl *.blg *.bcf *.run.xml *.out *.log
+
+implode: clean
+	-rm $(OUTPUT).pdf $(PATTERN).pdf
