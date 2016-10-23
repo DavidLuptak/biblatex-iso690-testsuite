@@ -11,7 +11,7 @@ all:
 	$(MAKE) clean
 	$(MAKE) makediff
 
-output: ${OUTPUT}.pdf
+output: $(OUTPUT).pdf
 pattern: $(PATTERN).pdf
 
 $(PATTERN).pdf:
@@ -19,9 +19,9 @@ $(PATTERN).pdf:
 	$(TEX) $(PATTERN).tex
 
 ${OUTPUT}.pdf:
-	$(TEX) ${OUTPUT}.tex
-	biber ${OUTPUT}.bcf
-	$(TEX) ${OUTPUT}.tex
+	$(TEX) $(OUTPUT).tex
+	biber $(OUTPUT).bcf
+	$(TEX) $(OUTPUT).tex
 
 makediff:
 	diffpdf $(PATTERN).pdf $(OUTPUT).pdf &
